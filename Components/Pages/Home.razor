@@ -24,9 +24,19 @@
 </div>
 
 @code {
+    public static bool Contains7(int num)
+    {
+        while(num != 0)
+        {
+            if (num % 10 == 7)
+                return true;
+            num /= 10;
+        }
+        return false;
+    }
     public static string IsBoom(int num)
     {
-        if ((num % 7 == 0) || (num % 10 == 7))
+        if ((num % 7 == 0) || Contains7(num))
             return "Boom";
         return num.ToString();
     }
